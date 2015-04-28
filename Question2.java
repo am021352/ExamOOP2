@@ -1,13 +1,4 @@
-﻿import java.io.*;
-import java.util.*;
-
-public class Question2{
-	public static void main(String[] args){
-		txtCopy("Source.txt", "Dest.txt");
-		editFile("Source.txt");
-		updateFile("Dest.txt");
-	}
-	public static void editFile(String content){
+﻿public static void updateFile(String content){
 		
 	try{
 
@@ -18,22 +9,13 @@ public class Question2{
 		String line2;
 		FileReader fw=new FileReader(content);
 		BufferedReader br=new BufferedReader(fw);
-		while((context=br.readLine())!=null)
-			context2+=context;
-		context2=context2.replace("a", "");
-		context2=context2.replace("e", "");
-		context2=context2.replace("i", "");
-		context2=context2.replace("o", "");
-		context2=context2.replace("u", "");
+		while((u=br.read())!=-1){
+		
+			System.out.println((char)u);
 
-
-			System.out.print(context2);
-
+		}
 		
 	}catch(Exception e){
 		System.out.println(e.toString());
 	}
 	}
-
-}
-
